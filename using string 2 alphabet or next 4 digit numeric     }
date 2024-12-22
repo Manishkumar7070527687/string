@@ -1,0 +1,29 @@
+# string
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+bool isvalid(string customer){
+    if(customer.length() !=6) return false;
+    for (int i = 0; i < 2; i++){
+    
+        /* code */if(! isalpha(customer[i])) return false;             // number check phele 2 alphabet or next 4 digit numeric
+    }
+        for (int  i = 2; i <customer.length(); i++){
+        
+            if(! isdigit(customer[i])) return false;
+        }
+    
+    return true;
+    
+}
+
+
+int main(){
+    string num ="ab1234";
+   bool res= isvalid(num);
+    cout<<boolalpha<<res;
+
+
+    return 0;
+}
